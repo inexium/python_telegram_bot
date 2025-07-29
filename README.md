@@ -9,7 +9,7 @@ Just returns "Hello >>username<<"<br>
 Returns a random picture of my cat<br>
 
 ## Docker
-docker build -t bot .
+docker build -t bot .<br>
 docker run --detach --name telegram_bot -e TELEGRAM_TOKEN=HERE_PUT_TOKEN bot
 
 ## Package manager
