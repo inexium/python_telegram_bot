@@ -81,9 +81,9 @@ async def hello(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 async def send_my_cat(
     update: Update, context: ContextTypes.DEFAULT_TYPE
 ) -> None:
-    images = os.listdir("telegram_bot/images/")
+    images = os.listdir("images/")
     random_value = random.randrange(0, len(images))
-    with open("telegram_bot/images/%s" % images[random_value], "rb") as img:
+    with open("images/%s" % images[random_value], "rb") as img:
         await context.bot.send_photo(
             chat_id=update.effective_chat.id, photo=img
         )
