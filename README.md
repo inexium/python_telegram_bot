@@ -9,12 +9,14 @@ Just returns "Hello >>username<<"<br>
 Returns a random picture of my cat<br>
 
 ## Docker
-docker build -t bot_image .<br>
-docker run --detach \<br>
---name telegram_bot \<br>
--e TELEGRAM_TOKEN=HERE_PUT_TOKEN \<br>
--v /YOUR_PATH_HERE/:/opt/telegram_bot/images/ \<br>
-bot_image<br>
+```sh
+docker build -t bot_image .
+docker run --detach \
+--name telegram_bot \
+-e TELEGRAM_TOKEN=HERE_PUT_TOKEN \
+-v /YOUR_PATH_HERE/:/opt/telegram_bot/images/ \
+bot_image
+```
 
 ## Package manager
 Using poetry
