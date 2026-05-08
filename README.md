@@ -1,16 +1,25 @@
 # Python Telegram Bot
-Just for fun<br>
+
+![python version](https://img.shields.io/badge/python-3.13-blue?logo=python&logoColor=white)
+![code style](https://img.shields.io/badge/code%20style-ruff-blue)
 
 ## Commands
-/hello<br>
-Just returns "Hello >>username<<"<br>
 
-/meowmeow<br>
-Returns a random picture of my cat<br>
+```
+/hello
+```
+Just returns "Hello >>username<<"
+
+```
+/meowmeow
+```
+Returns a random picture of my cat
 
 ## Docker
+
 ```sh
 docker build -t bot_image .
+
 docker run --detach \
 --name telegram_bot \
 -e TELEGRAM_TOKEN=HERE_PUT_TOKEN \
@@ -19,7 +28,9 @@ bot_image
 ```
 
 ## Package manager
-Using uv
+
+Actually using **uv** as a package manager
 
 ## Images
-Create a folder at root of project called "images"
+
+Images are located at : PROJECT_FOLDER/images/
