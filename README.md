@@ -19,7 +19,7 @@ bot_image
 ```
 
 ## Package manager
-Using poetry
+Using uv
 
 ## Images
 Create a folder at root of project called "images"
