@@ -2,12 +2,11 @@ import os
 import random
 from functools import partial, wraps
 
-from decouple import config
+from decouple import Csv, config
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
-# inexium, alesia
-RESTRICTED_IDS = [6154568530, 6018396337]
+ALLOWED_USER_IDS: list[int] = config("ALLOWED_USER_IDS", cast=Csv(int))
 
 
 class restricted(object):
@@ -40,7 +39,7 @@ class restricted(object):
             self, *args, **kwargs
         ):  # `self` is the *inner* class' `self` here
             user_id = args[0].effective_user.id  # args[0]: update
-            if user_id not in RESTRICTED_IDS:
+            if user_id not in ALLOWED_USER_IDS:
                 print(
                     f"Unauthorized access denied on {method.__name__} "
                     f"for {user_id} : {args[0].message.chat.username}."
@@ -57,7 +56,7 @@ class restricted(object):
             *args, **kwargs
         ):  # `self` would be the *restricted* class' `self` here
             user_id = args[0].effective_user.id  # args[0]: update
-            if user_id not in RESTRICTED_IDS:
+            if user_id not in ALLOWED_USER_IDS:
                 print(
                     f"Unauthorized access denied on {function.__name__} "
                     f"for {user_id} : {args[0].message.chat.username}."

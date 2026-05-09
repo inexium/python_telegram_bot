@@ -15,6 +15,13 @@ Just returns "Hello >>username<<"
 ```
 Returns a random picture of my cat
 
+## Environment variables
+
+| name                  | mandatory | comment                 |
+| :----------------     | :------:  | --------------------:   |
+| TELEGRAM_TOKEN        |   Yes     |                         |
+| ALLOWED_USER_IDS      |   Yes     | comma separated list    |
+
 ## Docker
 
 ```sh
@@ -23,6 +30,7 @@ docker build -t bot_image .
 docker run --detach \
 --name telegram_bot \
 -e TELEGRAM_TOKEN=HERE_PUT_TOKEN \
+-e ALLOWED_USER_IDS=123,123,123 \
 -v /YOUR_PATH_HERE/:/opt/telegram_bot/images/ \
 bot_image
 ```
